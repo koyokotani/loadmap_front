@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: loadmap_web
+    volumes:
+      - .:/usr/src/app
+    command: sh -c "yarn start"
+    ports:
+      - "8000:3000"
+    environment:
+      - NODE_ENV=production
+    stdin_open: true
+    tty: true
